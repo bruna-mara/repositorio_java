@@ -1,31 +1,26 @@
 package entidades;
-
-public class Aluno 
+public class Aluno extends Pessoa
 {
-			//PRIMEIRO PASSO - ATRIBUTOS (começar com public ou private)
-			//CRIAR CLASSE Aluno --> entidades
-			//nomeAluno[texto/Spring]
-			//anoNascimentoAluno[int]
-			//sexoAluno[char]
-			//turmaAluno[char]
-			
-		public String nomeAluno;
-		public int anoNascimentoAluno;
-		public char sexoAluno;
-		public char turmaAluno;
-		public double notas[] = new double[4]; 
+	private String turma;
+	private double notas[] = new double[2];
+	
+	
+	
+	public Aluno(String nome) 
+	{
+		super(nome);
+	}
+	public Aluno(String nome, char sexo, int anoNasc, String etnia, String turma )
 
-		public void mostra() 
-		{
-			if (sexoAluno == 'M') 
-			{
-				System.out.printf("O nome do aluno é %s", nomeAluno);
-			}
-			else if (sexoAluno == 'F') 
-			{
-				System.out.printf("O nome da aluna é %s", nomeAluno);
-			}
-			
-		}
+	{
+		super(nome, sexo, anoNasc, etnia);
+		this.turma = turma;
+		
+	}
+	public String getTurma() {
+		return turma;
+	}
+	public void setTurma(String turma) {
+		this.turma = turma;
+	}
 }
-
